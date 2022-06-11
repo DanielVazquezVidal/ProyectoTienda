@@ -29,13 +29,7 @@ public class RolVO {
 	private int idrol;
 	
 	@Column(length=45)
-	private String usuarioadministrador;
-	
-	@Column(length=45)
-	private String usuarioanonimo;
-	
-	@Column(length=45)
-	private String usuarioregistrado;
+	private String tipoUsuario;
 	
 	@OneToMany(mappedBy="rol")
 	private List<UsuarioVO> usuarios;
