@@ -29,7 +29,7 @@ public class RolVO {
 	private int idrol;
 	
 	@Column(length=45)
-	private String tipoUsuario;
+	private String tipo;
 	
 	@OneToMany(mappedBy="rol")
 	private List<UsuarioVO> usuarios;

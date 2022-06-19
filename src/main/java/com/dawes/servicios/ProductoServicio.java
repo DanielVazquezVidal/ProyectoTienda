@@ -1,5 +1,6 @@
 package com.dawes.servicios;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.dawes.modelo.ProductoVO;
@@ -13,4 +14,6 @@ public interface ProductoServicio {
 	public void update(ProductoVO producto);
 	
 	public void delete(Integer id);
+	
+	public List<ProductoVO> findAll();
 }

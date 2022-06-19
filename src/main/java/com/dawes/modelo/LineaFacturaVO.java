@@ -1,6 +1,7 @@
 package com.dawes.modelo;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -28,18 +29,24 @@ public class LineaFacturaVO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	@Column(length=20, unique=true)
-	private int idlineafactura;
+	@Column(unique=true)
+	private Integer id;
+	private String nombre;
+	private double cantidad;
 	private double precio;
-	private String codigo;
-	private LocalDate fecha;
+	private double total;
+	private double total1;
+	
+	
+	@ManyToOne
+	private UsuarioVO usuario;
+	
 	
 	@ManyToOne
 	private VentaVO venta;
 	
-	
-	@OneToMany(mappedBy="factura")
-	private List<ProductoVO> productos;
+	@ManyToOne
+	private ProductoVO producto;
 	
 	
 	

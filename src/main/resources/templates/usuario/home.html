@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
+
 <head>
 
   <meta charset="utf-8">
@@ -22,7 +23,11 @@
 <body>
 
   <!-- Navigation -->
-  <div th:include="administrador/template_admin.html::header"></div>
+  <div th:include="usuario/template_usuario.html::header" th:if="${sesion==null}">
+  </div>
+  
+  <div th:include="usuario/template_usuario.html::header-user" th:unless=${sesion==null}>
+  </div>
 
     <!-- Page Content -->
     <div class="container">
@@ -30,7 +35,7 @@
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
         <h1 class="display-3">Bienvenido a Planet Soccer 2022</h1>
-        <p class="lead">Tu tienda de Botas de Futbol En Linea</p>
+        <p class="lead">Tu tienda de botas de fútbol en Linea</p>
       </header>
 
       <!-- Page Features -->
@@ -47,18 +52,18 @@
             </div>
           </div>
         </div>
-
-        
-      
+</div>
 
       </div>
       <!-- /.row -->
 
-    </div>
+    
     <!-- /.container -->
 
     <!-- Footer -->
-    <div th:include="administrador/template_admin.html::footer"></div>
+    <div th:include="usuario/template_usuario.html::footer">
+    
+    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script th:src="@{vendor/jquery/jquery.min.js}"></script>

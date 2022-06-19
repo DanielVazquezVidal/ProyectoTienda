@@ -1,6 +1,7 @@
 package com.dawes.modelo;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -28,19 +29,22 @@ public class VentaVO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	@Column(length=20, unique=true)
-	private int idventa;
-	private double importe;
-	private double iva;
-	private LocalDate fecha;
+	@Column(unique=true)
+	private Integer id;
+	private String numero;
+	private Date fechaCreacion;
+	private Date fechaRecibida;
+	private double total;
 	
+	@OneToMany(mappedBy="venta")
+	private List<LineaFacturaVO> lineafactura;
+	
+	
+	@OneToOne(mappedBy="factura")
+	private ProductoVO productos;
 	
 	@ManyToOne
 	private UsuarioVO usuario;
-	
-	
-	@OneToMany(mappedBy="venta")
-	private List<LineaFacturaVO> facturas;
 	
 	
 	

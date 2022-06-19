@@ -1,11 +1,10 @@
 package com.dawes.modelo;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,16 +33,17 @@ public class UsuarioVO {
 	private String nombre;
 	
 	@Column(length=45)
-	private String apellidos;
-	
-	
-	private LocalDate fecharegistro;
+	private String direccion;
 	
 	@Column(length=60)
 	private String password;
 	
 	@Column(length=60)
-	private String metodopago;
+	private String email;
+	
+	
+	@Column(length=60)
+	private String tipo;
 	
 	@ManyToOne
 	private RolVO rol;

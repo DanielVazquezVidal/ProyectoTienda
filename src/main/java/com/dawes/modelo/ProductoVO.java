@@ -25,12 +25,12 @@ public class ProductoVO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	private int idproducto;
+	private int id;
 	private String nombre;
 	private double precio;
-	private String tallaje;
-	private String tiposuela;
-	private String superficie;
+	private String descripcion;
+	private String cantidad;
+	private String imagen;
 	
 	
 	@ManyToOne

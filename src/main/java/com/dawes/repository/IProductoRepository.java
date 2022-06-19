@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.dawes.modelo.ProductoVO;
 
 @Repository
-public interface ProductoRepository extends JpaRepository<ProductoVO,Integer> {
+public interface IProductoRepository extends JpaRepository<ProductoVO,Integer> {
 
 }
